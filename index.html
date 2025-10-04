@@ -3,8 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A gym website landing page" />
+    <!--Start of Google Fonts Link-->
+    <link rel="preload" href="https://fonts.googleapis.com" />
+    <link rel="preload" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ultra&display=swap"
+      rel="stylesheet"
+    />
+    <!--End of Google Fonts Link-->
+
+    <!--Start of Favicon Link-->
     <link rel="shortcut icon" href="favicon/favicon.svg" type="image/x-icon" />
-    <title>Document</title>
+    <!--End of Favicon Link-->
+
+    <!--Start of CSS Files-->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--End of CSS Files-->
+    <title>TigerLair</title>
   </head>
-  <body></body>
+  <body>
+    <header class="main-header">
+      <a href="index.html" class="logo"
+        ><img src="logo/logo.svg" alt="Gym logo" /><span>TigerLair</span></a
+      >
+
+      <nav class="main-nav">
+        <label
+          for="hamburger-icon"
+          class="side-nav-toggle"
+          aria-controls="main-menu"
+          aria-expanded="false"
+          aria-label="Toggle main menu"
+        >
+          <input type="checkbox" id="hamburger-icon" />
+        </label>
+        <ul class="main-nav__list">
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
 </html>
