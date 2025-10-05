@@ -26,7 +26,6 @@
 html,
 body {
   background-color: var(--Primary-Color);
-  overflow-y: hidden;
 }
 
 @media only screen and (max-width: 767px) {
