@@ -15,6 +15,8 @@
   --bar-height: 4px;
   --burger-gap: 4px;
   --burger-height: calc(var(--burger-height) * 3 + var(--burger-gap) * 2);
+  --mobile-heading: 2.625rem;
+  --desktop-heading: 3.3125rem;
 }
 
 * {
@@ -24,6 +26,7 @@
 html,
 body {
   background-color: var(--Primary-Color);
+  overflow-y: hidden;
 }
 
 @media only screen and (max-width: 767px) {
@@ -135,6 +138,97 @@ body {
     text-decoration: none;
     color: #36454f;
     line-height: 1.25rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  main .landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 49px;
+    position: relative;
+    overflow-x: clip;
+  }
+
+  main .landing-page .background-image {
+    width: 100%;
+    height: 319px;
+    background-image: url(../img/landing-page-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: imageSlideIn 0.6s ease-in 0.9s forwards;
+    transform: translateX(400px);
+    opacity: 0;
+  }
+
+  main .landing-page header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    animation: heroSlideIn 1s ease-in 0.5s forwards;
+    transform: translateX(-400px);
+    opacity: 0;
+  }
+
+  main .landing-page header h1 {
+    color: var(--Secondary-Color);
+    font-family: var(--Heading-H1-Font-Family);
+    line-height: 42px;
+    font-size: var(--mobile-heading);
+    text-align: center;
+  }
+
+  main .landing-page header p {
+    color: var(--Secondary-Color);
+    font-size: var(--Body-Font-Size);
+    font-family: var(--Body-Text);
+    line-height: 20px;
+    text-align: center;
+  }
+
+  main .landing-page header button {
+    background-color: var(--Accent-Color);
+    border: none;
+    text-align: center;
+    font-size: var(--Call-To-Action-Text-font-size);
+    font-family: var(--Body-Text);
+    font-weight: var(--Font-Weight-Bold);
+    color: var(--Secondary-Color);
+    padding: var(--Padding);
+  }
+
+  @keyframes imageSlideIn {
+    0% {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes heroSlideIn {
+    0% {
+      transform: translateX(-400px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 }
 
@@ -249,6 +343,95 @@ body {
     line-height: 1.25rem;
     transition: all ease-in 0.3s;
   }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  main .landing-page {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  main .landing-page .background-image {
+    width: 538px;
+    height: 512px;
+    background-image: url(../img/landing-page-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: imageSlideIn 0.6s ease-in 0.9s forwards;
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+
+  main .landing-page header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 457px;
+    animation: heroSlideIn 1s ease-in 0.5s forwards;
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+
+  main .landing-page header h1 {
+    color: var(--Secondary-Color);
+    font-family: var(--Heading-H1-Font-Family);
+    line-height: 42px;
+    font-size: var(--mobile-heading);
+  }
+
+  main .landing-page header p {
+    color: var(--Secondary-Color);
+    font-size: var(--Body-Font-Size);
+    font-family: var(--Body-Text);
+    line-height: 20px;
+  }
+
+  main .landing-page header button {
+    background-color: var(--Accent-Color);
+    border: none;
+    text-align: center;
+    font-size: var(--Call-To-Action-Text-font-size);
+    font-family: var(--Body-Text);
+    font-weight: var(--Font-Weight-Bold);
+    color: var(--Secondary-Color);
+    padding: var(--Padding);
+    align-self: flex-start;
+    transition: all ease-in 0.3s;
+    position: relative;
+  }
+
+  @keyframes imageSlideIn {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes heroSlideIn {
+    0% {
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -274,5 +457,58 @@ body {
   .main-header .main-nav .main-nav__list li a:hover {
     color: var(--Accent-Color);
     font-weight: var(--Font-Weight-Bold);
+  }
+
+  main .landing-page {
+    justify-content: space-between;
+  }
+
+  main .landing-page .background-image {
+    width: 576px;
+    height: 516px;
+  }
+
+  main .landing-page header {
+    width: 500px;
+  }
+
+  main .landing-page header h1 {
+    line-height: 53px;
+    font-size: var(--desktop-heading);
+  }
+
+  main .landing-page header button::before,
+  main .landing-page header button::after {
+    content: "";
+    position: absolute;
+    background-color: var(--Accent-Color);
+    transition: all ease-in 0.3s;
+  }
+
+  main .landing-page header button::before {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+  }
+
+  main .landing-page header button::after {
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 0;
+  }
+
+  main .landing-page header button:hover::before {
+    width: 100%;
+  }
+
+  main .landing-page header button:hover::after {
+    height: 100%;
+  }
+
+  main .landing-page header button:hover {
+    background-color: var(--Primary-Color);
+    box-shadow: 0 12px 12px rgba(255, 255, 255, 0.5);
   }
 }
